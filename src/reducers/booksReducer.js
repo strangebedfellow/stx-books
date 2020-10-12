@@ -50,6 +50,8 @@ function booksReducer(state, action) {
                 author: false,
                 ebook: false
             }
+        default:
+            return state
     }
 }
 export { initialState, booksReducer };

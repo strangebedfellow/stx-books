@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import './scss/main.scss';
 import BookItem from './components/BookItem';
 import AdvancedSearch from './components/AdvancedSearch';
@@ -11,15 +11,16 @@ function App() {
   const [booksState, dispatch] = useReducer(booksReducer, initialState)
 
   useEffect(() => {
-    apiCall()
+    const apiCall = () => {
+      booksState.searchQuery &&
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${booksState.searchQuery}&maxResults=40`)
+          .then(resp => resp.json().then(data => dispatch({ type: 'FETCH_BOOKS', payload: data.items })))
+          .catch(err => { alert(err) });
+    }
+    apiCall();
   }, [booksState.searchQuery])
 
-  const apiCall = () => {
-    booksState.searchQuery &&
-      fetch(`https://www.googleapis.com/books/v1/volumes?q=${booksState.searchQuery}&maxResults=40`)
-        .then(resp => resp.json().then(data => dispatch({ type: 'FETCH_BOOKS', payload: data.items })))
-        .catch(err => { alert(err) });
-  }
+
 
   const filterResp = item => {
     let found = true;
