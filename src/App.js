@@ -37,12 +37,11 @@ function App() {
 
   const dispatchTypes = {
     setQuery: e => { dispatch({ type: 'SET_QUERY', payload: e.target.value }) },
-    toggle: (e) => dispatch({ type: 'TOGGLE', payload: !booksState.advanced }),
-    toggleEbook: (e) => dispatch({ type: 'TOGGLE_EBOOK', payload: !booksState.ebook }),
+    toggle: () => dispatch({ type: 'TOGGLE', payload: !booksState.advanced }),
+    toggleEbook: () => dispatch({ type: 'TOGGLE_EBOOK', payload: !booksState.ebook }),
     setLanguage: e => { dispatch({ type: 'SET_LANG', payload: e.target.value }) },
     setAuthor: e => { dispatch({ type: 'SET_AUTHOR', payload: e.target.value }) },
     reset: () => dispatch({ type: "RESET" })
-
   }
 
   return <div className='container'>
