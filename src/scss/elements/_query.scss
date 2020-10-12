@@ -1,0 +1,124 @@
+.query {
+    margin: 2rem 0 1rem 0;
+
+    ul {
+        width: 100%;
+    }
+
+    .searchQuery {
+        width: 100%;
+        height: 2rem;
+        background-color: $color-secondary;
+        border-radius: $border-radius;
+        border: 2px solid $border-color;
+        color: rgb(78, 194, 124);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        padding: 1rem 0 1rem 0;
+        &:focus::placeholder {
+            color: transparent;
+        }
+        &::placeholder {
+            color: rgb(78, 194, 124);
+            opacity: 0.5;
+        }
+        &:-ms-input-placeholder {
+            color: rgb(78, 194, 124);
+            opacity: 0.5;
+        }
+        &::-ms-input-placeholder {
+            color: rgb(78, 194, 124);
+            opacity: 0.5;
+        }
+    }
+
+    .advanced-search--active {
+        display: flex;
+    }
+
+    .advanced-search--hidden {
+        display: none;
+    }
+
+    .advanced-search {
+        margin-top: 0.5rem;
+        background-color: #424242;
+        border-radius: $border-radius;
+        width: 50%;
+
+        #author,
+        #lang,
+        .ebook,
+        .reset-filters-btn {
+            font-size: 0.8rem;
+            background-color: #424242;
+            border: 2px solid $border-color;
+            color: $text-color;
+            text-align: center;
+            border-radius: $border-radius;
+        }
+
+        #author {
+            padding: 1rem 0 1rem 0;
+            margin: 1rem 0 0.5rem 0;
+            &:focus::placeholder {
+                color: transparent;
+            }
+            &::placeholder {
+                color: $text-color;
+            }
+            &:-ms-input-placeholder {
+                color: $text-color;
+            }
+            &::-ms-input-placeholder {
+                color: $text-color;
+            }
+        }
+
+        #lang {
+            padding: 1rem;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+
+        .ebook {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin: 0.5rem 0 0.5rem 0;
+        }
+
+        .reset-filters-btn {
+            background-color: $text-color;
+            color: #424242;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .advanced-btn {
+        font-weight: bold;
+        background-color: $color-secondary;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        height: 2rem;
+        color: $text-color;
+        cursor: pointer;
+    }
+
+    h1 {
+        margin: 2rem 0;
+        color: $text-color;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: $screen-sm) {
+    .query {
+        .advanced-search {
+            width: 90%;
+        }
+    }
+}

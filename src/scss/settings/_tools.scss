@@ -1,0 +1,41 @@
+@for $i from 1 through 12 {
+  .col-xs-#{$i} {
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+    min-height: 1px;
+    width: 100% / 12 * $i;
+  }
+}
+
+@for $i from 1 through 12 {
+  @media (min-width: $screen-sm) {
+    .col-sm-#{$i} {
+      margin-top: 1rem;
+      padding: 0 0.5rem;
+      min-height: 1px;
+      width: 100% / 12 * $i;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @media (min-width: $screen-md) {
+    .col-md-#{$i} {
+      margin-top: 1rem;
+      padding: 0 0.5rem;
+      min-height: 1px;
+      width: 100% / 12 * $i;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @media (min-width: $screen-lg) {
+    .col-lg-#{$i} {
+      margin-top: 1rem;
+      padding: 0 0.5rem;
+      min-height: 1px;
+      width: 100% / 12 * $i;
+    }
+  }
+}
